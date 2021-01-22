@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NameQuiz</string>
+    <string name="Start_Quiz">Start Quiz</string>
+    <string name="add">Add</string>
+    <string name="database">Database</string>
+    <string name="add_person">Add person</string>
+    <string name="her_kan_du_legge_til_personer">Her kan du legge til personer</string>
+    <string name="name">Name</string>
+</resources>
