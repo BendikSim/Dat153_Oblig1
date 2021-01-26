@@ -1,4 +1,4 @@
-package com.example.namequiz;
+package com.example.namequiz.model;
 
 public class Person {
 

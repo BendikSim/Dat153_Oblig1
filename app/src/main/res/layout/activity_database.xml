@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DatabaseActivity">
+    tools:context=".activity.DatabaseActivity">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="145dp"
         android:layout_height="36dp"
-        android:text="Her er databasen"
+        android:text="@string/her_er_databasen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.282"

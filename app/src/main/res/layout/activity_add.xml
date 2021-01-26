@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".AddActivity">
+    tools:context=".activity.AddActivity">
 
 
     <TextView
@@ -27,10 +28,25 @@
         android:layout_width="244dp"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/name"
-        android:autofillHints="" />
+        android:inputType="textPersonName" />
+
+    <ImageView
+        android:layout_weight="1"
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/todo" />
+
+    <Button
+        android:text="@string/capture_image"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:background="@color/design_default_color_primary"
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/button5"

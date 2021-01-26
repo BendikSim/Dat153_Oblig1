@@ -6,4 +6,9 @@
     <string name="add_person">Add person</string>
     <string name="her_kan_du_legge_til_personer">Her kan du legge til personer</string>
     <string name="name">Name</string>
+    <string name="jon">Jon</string>
+    <string name="her_er_quizzen">Her er Quizzen</string>
+    <string name="her_er_databasen">Her er databasen</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="todo">TODO</string>
 </resources>

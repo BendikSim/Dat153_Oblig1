@@ -1,18 +1,17 @@
-package com.example.namequiz;
+package com.example.namequiz.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-public class AddActivity extends AppCompatActivity {
+import com.example.namequiz.R;
+
+public class DatabaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
+        setContentView(R.layout.activity_database);
     }
-
 
 }
