@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="10dp"
     android:orientation="vertical"
     tools:context=".activity.AddActivity">
 
@@ -24,32 +24,53 @@
         app:layout_constraintVertical_bias="0.075" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextName"
         android:layout_width="244dp"
         android:layout_height="wrap_content"
         android:layout_margin="50dp"
+        android:layout_marginVertical="60dp"
         android:autofillHints=""
         android:ems="10"
         android:inputType="textPersonName" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:context=".activity.AddActivity">
+
+        <Button
+            android:id="@+id/capBtn"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@color/design_default_color_primary"
+            android:text="@string/capture_image"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/imageBtn"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:background="@color/design_default_color_primary"
+            android:text="Existing image"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
     <ImageView
-        android:layout_weight="1"
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="223dp"
+        android:layout_marginVertical="10dp"
+        android:layout_weight="1"
         android:contentDescription="@string/todo" />
 
     <Button
-        android:text="@string/capture_image"
-        android:textStyle="bold"
-        android:textColor="#ffffff"
-        android:background="@color/design_default_color_primary"
-        android:id="@+id/button6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/button5"
+        android:id="@+id/addBtn"
         android:layout_width="147dp"
         android:layout_height="wrap_content"
         android:layout_margin="100dp"

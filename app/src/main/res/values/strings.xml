@@ -11,4 +11,7 @@
     <string name="her_er_databasen">Her er databasen</string>
     <string name="capture_image">Capture Image</string>
     <string name="todo">TODO</string>
+    <string name="hello">Hello</string>
+    <string name="add_a_new_person">Add a new person</string>
+    <string name="delete_btn">delBtn</string>
 </resources>
