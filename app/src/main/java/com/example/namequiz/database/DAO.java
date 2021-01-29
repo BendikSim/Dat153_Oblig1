@@ -3,7 +3,7 @@ package com.example.namequiz.database;
 import android.app.Application;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.PersistableBundle;
+import android.graphics.drawable.Drawable;
 
 import com.example.namequiz.R;
 import com.example.namequiz.model.Person;

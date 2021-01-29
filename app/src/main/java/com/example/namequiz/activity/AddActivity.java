@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.namequiz.R;
+import com.example.namequiz.database.DAO;
 import com.example.namequiz.helper.Helper;
 import com.example.namequiz.model.Person;
 
@@ -35,6 +36,7 @@ public class AddActivity extends AppCompatActivity {
 
     // Helper
     Helper helper = new Helper();
+    DAO dao = new DAO();
 
     // Request codes
     private static final int CAMERA_CODE = 100;
@@ -85,6 +87,7 @@ public class AddActivity extends AppCompatActivity {
         if (requestCode == CAMERA_CODE && data != null) {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(bitmap);
+            helper.addSelectedImg(bitmap);
         }else if(requestCode == IMAGE_CODE && resultCode == RESULT_OK){
             Uri imageUri = data.getData();
             try {
@@ -103,11 +106,11 @@ public class AddActivity extends AppCompatActivity {
         // Verify data
         String name = editTextName.getText().toString();
         if (imageView.getDrawable() != null && !name.matches("")) {
+               Person person = new Person(name, helper.getSelectedImg());
 
-            Person person = new Person(name, helper.getSelectedImg());
-
+               
             try {
-                helper.addPerson(person);
+                dao.addPerson(person);
 
                 imageView.setImageResource(0);
                 editTextName.getText().clear();

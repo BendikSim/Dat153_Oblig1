@@ -14,4 +14,7 @@
     <string name="hello">Hello</string>
     <string name="add_a_new_person">Add a new person</string>
     <string name="delete_btn">delBtn</string>
+    <string name="personimage">personImage</string>
+    <string name="type_a_name">type_a_name</string>
+    <string name="next">next</string>
 </resources>

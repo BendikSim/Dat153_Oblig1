@@ -1,6 +1,7 @@
 package com.example.namequiz.model;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
 public class Person {
 

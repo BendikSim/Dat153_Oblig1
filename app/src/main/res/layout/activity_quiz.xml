@@ -6,13 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".activity.QuizActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/her_er_quizzen"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/quiz_image"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="@string/personimage"
+        app:layout_constraintBottom_toTopOf="@+id/quizAns_Txt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+
+    <EditText
+        android:id="@+id/quizAns_Txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="255dp"
+        android:autofillHints="type_a_name"
+        android:ems="10"
+        android:hint="@string/type_a_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/quizNext_Btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:text="@string/next"
+        app:layout_constraintEnd_toEndOf="@+id/quizAns_Txt"
+        app:layout_constraintStart_toStartOf="@+id/quizAns_Txt"
+        app:layout_constraintTop_toBottomOf="@+id/quizAns_Txt" />
+
+    <TextView
+        android:id="@+id/quizScoreTracker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
