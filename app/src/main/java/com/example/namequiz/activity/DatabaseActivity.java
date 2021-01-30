@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.namequiz.R;
@@ -19,6 +20,9 @@ public class DatabaseActivity extends AppCompatActivity {
 
     private ListView listView;
     private Helper helper = new Helper();
+    private Button button;
+
+    ArrayList<Person> personList = (ArrayList<Person>) DAO.getPersonList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +35,8 @@ public class DatabaseActivity extends AppCompatActivity {
     public void fillList(){
         listView = findViewById(R.id.listView);
 
-        ArrayList<Person> personList = (ArrayList<Person>) DAO.getPersonList();
         ListViewAdapter adapter = new ListViewAdapter(this, R.layout.list_view, personList);
         listView.setAdapter(adapter);
-
     }
 
     public void goToAddActivity(View view){

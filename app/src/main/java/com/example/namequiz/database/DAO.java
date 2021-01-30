@@ -30,15 +30,7 @@ public class DAO extends Application {
         return new ArrayList(personList);
     }
 
-    public static Bitmap getBitmap(String n){
-        Bitmap bitmap = null;
-        boolean found = false;
-        for(int i = 0; i < personList.size() && !found; i++){
-            if(personList.get(i).getName().equals(n)){
-                bitmap = personList.get(i).getImage();
-                found = true;
-            }
-        }
-        return bitmap;
+    public void removePerson(Person p){
+        personList.remove(p);
     }
 }

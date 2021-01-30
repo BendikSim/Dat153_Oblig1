@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.namequiz.R;
+import com.example.namequiz.database.DAO;
 import com.example.namequiz.model.Person;
 
 import java.util.ArrayList;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 public class ListViewAdapter extends ArrayAdapter<Person> {
     private Context context;
     private int resource;
+    private DAO dao = new DAO();
 
     public ListViewAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Person> objects) {
         super(context, resource, objects);
@@ -41,7 +43,12 @@ public class ListViewAdapter extends ArrayAdapter<Person> {
         textName.setText(getItem(position).getName());
 
         ImageButton deleteBtn = convertView.findViewById(R.id.deleteBtn);
-        deleteBtn.setOnClickListener(x -> remove(getItem(position)));
+        deleteBtn.setOnClickListener(x ->{
+            dao.removePerson(getItem(position));
+            remove(getItem(position));
+        });
+
+
         return convertView;
     }
 }

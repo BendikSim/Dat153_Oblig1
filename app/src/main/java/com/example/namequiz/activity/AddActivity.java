@@ -108,7 +108,6 @@ public class AddActivity extends AppCompatActivity {
         if (imageView.getDrawable() != null && !name.matches("")) {
                Person person = new Person(name, helper.getSelectedImg());
 
-               
             try {
                 dao.addPerson(person);
 
