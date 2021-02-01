@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -63,11 +64,16 @@ public class QuizActivity extends AppCompatActivity {
             name.setText("");
         }else{
             image.setImageBitmap(null);
-            name.setText(null);
+            name.setText("");
+            name.setHint("");
+            name.clearFocus();
+            name.setBackgroundResource(android.R.color.transparent);
+            scoreView.setText("Final score: " + score + "/" + totalScore);
             button.setText("End quiz");
             button.setOnClickListener(x -> finishQuiz());
-            name.onEditorAction(EditorInfo.IME_ACTION_DONE);
+            //name.onEditorAction(EditorInfo.IME_ACTION_DONE);
         }
+            name.onEditorAction(EditorInfo.IME_ACTION_DONE);
     }
 
     private void guessPerson() {

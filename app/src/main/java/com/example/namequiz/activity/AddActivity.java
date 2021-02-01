@@ -66,9 +66,6 @@ public class AddActivity extends AppCompatActivity {
             ActivityCompat.requestPermissions(AddActivity.this, new String[]{
                     Manifest.permission.CAMERA
             }, CAMERA_CODE);
-        }else{
-            // Permission denied
-            Toast.makeText(this,"Permission denied...", Toast.LENGTH_SHORT).show();
         }
 
         captureBtn.setOnClickListener(new View.OnClickListener() {

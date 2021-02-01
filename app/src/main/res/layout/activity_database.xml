@@ -29,6 +29,9 @@
         android:stretchMode="columnWidth"
         android:verticalSpacing="1dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <Button
         android:id="@+id/button7"
         android:layout_width="wrap_content"
@@ -37,5 +40,17 @@
         android:layout_weight="1"
         android:onClick="goToAddActivity"
         android:text="@string/add_a_new_person" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="wrap_content"
+            android:layout_height="97dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:onClick="goToMainActivity"
+            android:text="@string/home" />
+
+    </LinearLayout>
+
 
 </LinearLayout>
