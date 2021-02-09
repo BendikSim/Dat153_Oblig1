@@ -8,25 +8,31 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.namequiz.R;
 import com.example.namequiz.database.DAO;
+import com.example.namequiz.database.PersonDatabase;
 import com.example.namequiz.model.Person;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListViewAdapter extends ArrayAdapter<Person> {
     private Context context;
     private int resource;
-    private DAO dao = new DAO();
+    private PersonDatabase db;
+    private List<Person> personList;
 
-    public ListViewAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Person> objects) {
-        super(context, resource, objects);
+    public ListViewAdapter(@NonNull Context context, int resource, @NonNull List<Person> personList) {
+        super(context, resource, personList);
         this.context = context;
         this.resource = resource;
+        this.personList = personList;
+        this.db = PersonDatabase.getInstance(context);
     }
 
     @NonNull
@@ -43,12 +49,15 @@ public class ListViewAdapter extends ArrayAdapter<Person> {
         textName.setText(getItem(position).getName());
 
         ImageButton deleteBtn = convertView.findViewById(R.id.deleteBtn);
-        deleteBtn.setOnClickListener(x ->{
-            dao.removePerson(getItem(position));
-            remove(getItem(position));
-        });
-
-
+        deleteBtn.setOnClickListener(x ->
+            removePerson(position));
         return convertView;
+    }
+
+    public void removePerson(int pos){
+        Person person = getItem(pos);
+        remove(person);
+        db.personDAO().removePerson(person);
+        Toast.makeText(context.getApplicationContext(), "Successfully removed " + person.getName(), Toast.LENGTH_SHORT).show();
     }
 }

@@ -20,7 +20,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.namequiz.R;
-import com.example.namequiz.database.DAO;
+import com.example.namequiz.database.PersonDatabase;
 import com.example.namequiz.helper.Helper;
 import com.example.namequiz.model.Person;
 
@@ -36,7 +36,7 @@ public class AddActivity extends AppCompatActivity {
 
     // Helper
     Helper helper = new Helper();
-    DAO dao = new DAO();
+    PersonDatabase db;
 
     // Request codes
     private static final int CAMERA_CODE = 100;
@@ -47,6 +47,8 @@ public class AddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
+
+        db = PersonDatabase.getInstance(this);
 
         // Find view
         editTextName = findViewById(R.id.editTextName);
@@ -106,7 +108,7 @@ public class AddActivity extends AppCompatActivity {
                Person person = new Person(name, helper.getSelectedImg());
 
             try {
-                dao.addPerson(person);
+                db.personDAO().addPerson(person);
 
                 imageView.setImageResource(0);
                 editTextName.getText().clear();

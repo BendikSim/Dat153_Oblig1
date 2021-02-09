@@ -11,11 +11,11 @@ import android.widget.ListView;
 
 import com.example.namequiz.R;
 import com.example.namequiz.adapter.ListViewAdapter;
-import com.example.namequiz.database.DAO;
+import com.example.namequiz.database.PersonDatabase;
 import com.example.namequiz.helper.Helper;
 import com.example.namequiz.model.Person;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class DatabaseActivity extends AppCompatActivity {
 
@@ -23,18 +23,22 @@ public class DatabaseActivity extends AppCompatActivity {
     private Helper helper = new Helper();
     private Button button;
 
-    ArrayList<Person> personList = (ArrayList<Person>) DAO.getPersonList();
+    private PersonDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_database);
 
+        db = PersonDatabase.getInstance(this);
+
         fillList();
     }
 
     public void fillList(){
         listView = findViewById(R.id.listView);
+
+        List<Person> personList = db.personDAO().getAllPersons();
 
         ListViewAdapter adapter = new ListViewAdapter(this, R.layout.list_view, personList);
         listView.setAdapter(adapter);

@@ -12,13 +12,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.namequiz.R;
-import com.example.namequiz.database.DAO;
+import com.example.namequiz.database.PersonDatabase;
 import com.example.namequiz.model.Person;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 
 public class QuizActivity extends AppCompatActivity {
 
@@ -31,11 +30,14 @@ public class QuizActivity extends AppCompatActivity {
 
     private Person person;
     private Iterator<Person> iterator;
+    private PersonDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        db = PersonDatabase.getInstance(this);
 
         // Score variables
         score = 0;
@@ -49,7 +51,7 @@ public class QuizActivity extends AppCompatActivity {
 
         button.setOnClickListener(x -> guessPerson());
 
-        ArrayList<Person> personList = (ArrayList<Person>) DAO.getPersonList();
+        List<Person> personList = db.personDAO().getAllPersons();
 
         Collections.shuffle(personList);
         iterator = personList.iterator();
