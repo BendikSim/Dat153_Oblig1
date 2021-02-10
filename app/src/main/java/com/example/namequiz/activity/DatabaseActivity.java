@@ -21,7 +21,6 @@ public class DatabaseActivity extends AppCompatActivity {
 
     private ListView listView;
     private Helper helper = new Helper();
-    private Button button;
 
     private PersonDatabase db;
 

@@ -14,11 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.namequiz.R;
-import com.example.namequiz.database.DAO;
 import com.example.namequiz.database.PersonDatabase;
 import com.example.namequiz.model.Person;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ListViewAdapter extends ArrayAdapter<Person> {

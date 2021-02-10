@@ -98,4 +98,8 @@ public class QuizActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
+    public int getScore(){
+        return score;
+    }
 }
