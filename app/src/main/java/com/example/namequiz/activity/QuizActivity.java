@@ -32,6 +32,8 @@ public class QuizActivity extends AppCompatActivity {
     private Iterator<Person> iterator;
     private PersonDatabase db;
 
+    public static List<Person> database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,10 +53,12 @@ public class QuizActivity extends AppCompatActivity {
 
         button.setOnClickListener(x -> guessPerson());
 
-        List<Person> personList = db.personDAO().getAllPersons();
+        // Get database
+        database = db.personDAO().getAllPersons();
 
-        Collections.shuffle(personList);
-        iterator = personList.iterator();
+        // Randomize database
+        Collections.shuffle(database);
+        iterator = database.iterator();
 
         nextQuestion();
     }

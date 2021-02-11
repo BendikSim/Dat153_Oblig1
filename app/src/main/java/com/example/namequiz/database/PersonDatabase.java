@@ -10,7 +10,7 @@ import androidx.room.TypeConverters;
 import com.example.namequiz.converters.Converter;
 import com.example.namequiz.model.Person;
 
-@Database(entities = {Person.class}, version = 6)
+@Database(entities = {Person.class}, version = 7)
 @TypeConverters({Converter.class})
 public abstract class PersonDatabase extends RoomDatabase {
     private static final String DB_NAME = "db";

@@ -2,7 +2,11 @@ package com.example.namequiz.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +42,8 @@ public class DatabaseActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
 
         List<Person> personList = db.personDAO().getAllPersons();
+        Person p1 = new Person("Jon", BitmapFactory.decodeResource(this.getResources(), R.drawable.jon));
+        personList.add(p1);
 
         ListViewAdapter adapter = new ListViewAdapter(this, R.layout.list_view, personList);
         listView.setAdapter(adapter);
